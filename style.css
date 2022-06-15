@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+* {
+  list-style-type: none !important;
+}
+
+/* GENERAL */
+body {
+  background: linear-gradient(0deg, rgb(117, 226, 220) 53%, rgb(240, 255, 251) 100%);
+  background-repeat: no-repeat;
+  font-family: "Ubuntu", sans-serif;
+  min-width: 350px !important;
+}
+
+p {
+  margin-bottom: 24px;
+  line-height: 1.9;
+}
+
+.p-5 {
+  padding: 5px !important;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+label {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #00011c;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+#line {
+  visibility: hidden;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: 160px;
+  left: 0px;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 1px 1px 1px rgba(81, 85, 87, 0.61) inset;
+}
+
+.btnCustom {
+  display: flex;
+  position: relative;
+  background-color: #75e2dc;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+}
+.btnCustom .fa-chevron-right,
+.btnCustom .fa-chevron-left {
+  position: absolute;
+  top: 17px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.btnCustom .fa-chevron-right {
+  -webkit-transition: right 0.15s ease-in-out;
+  transition: right 0.15s ease-in-out;
+  right: 18px;
+}
+.btnCustom .fa-chevron-left {
+  left: 18px;
+  -webkit-transition: left 0.15s ease-in-out;
+  transition: left 0.15s ease-in-out;
+}
+.btnCustom:hover .fa-chevron-right {
+  right: 12px;
+  -webkit-transition: right 0.15s ease-in-out;
+  transition: right 0.15s ease-in-out;
+}
+.btnCustom:hover .fa-chevron-left {
+  left: 12px;
+  -webkit-transition: left 0.15s ease-in-out;
+  transition: left 0.15s ease-in-out;
+}
+
+.mainCont {
+  padding: 60px 0px;
+  min-height: 100vh;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.loading .loadingImg {
+  width: 150px;
+  height: 150px;
+}
+.loading .errorCont {
+  display: none;
+}
+
+.inputCard {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 15px;
+}
+
+.formCont {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #cef7f1;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2375e2dc' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 10px 10px 20px rgb(123, 212, 206);
+  -webkit-box-shadow: 10px 10px 20px rgb(123, 212, 206);
+  -moz-box-shadow: 10px 10px 20px rgb(123, 212, 206);
+}
+.formCont .progress {
+  background: #baf2e9;
+  height: 10px;
+  border-radius: 0px !important;
+}
+.formCont .progress .progress-bar {
+  background: #01c7ca;
+}
+.formCont .questCont {
+  display: none;
+  position: relative;
+  padding: 30px 0px 60px 0px;
+  height: 100%;
+}
+.formCont .questCont .loginCont {
+  margin-top: 40px;
+}
+.formCont .questCont .loginCont .loginLabel {
+  color: #044d5e;
+  font-size: 26px;
+}
+.formCont .questCont .loginCont #startBtn {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 130px;
+}
+.formCont .questCont #questForm {
+  width: 65%;
+  margin: 0 auto;
+  min-width: 300px;
+}
+.formCont .questCont .questionTxt,
+.formCont .questCont .questionNo {
+  color: #044d5e;
+  text-align: center;
+  font-weight: bold;
+}
+.formCont .questCont .questionNo {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.formCont .questCont .questionTxt {
+  text-transform: uppercase;
+  min-height: 80px;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+.formCont .questCont .step {
+  display: none;
+}
+.formCont .questCont .step h4 {
+  margin: 0 0 26px 0;
+  padding: 0;
+  position: relative;
+  font-weight: 500;
+  font-size: 23px;
+  font-size: 1.4375rem;
+  line-height: 1.6;
+}
+.formCont .questCont .qBox {
+  position: relative;
+}
+.formCont .questCont .q__question {
+  position: relative;
+}
+.formCont .questCont .q__question:not(:last-child) {
+  margin-bottom: 10px;
+}
+.formCont .questCont .question__input {
+  position: absolute;
+  left: -99999px;
+  top: 10px;
+}
+.formCont .questCont .questionOption {
+  display: block;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.formCont .questCont .selectCircle {
+  width: 30px;
+  height: 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0fef6;
+  color: #004a7b;
+}
+.formCont .questCont .question__input:checked + .form-check-label {
+  background-color: #75e2dc;
+  box-shadow: 0 0 0 0;
+}
+.formCont .questCont .question__input:checked + .form-check-label .selectCircle {
+  background-color: #004a7b;
+  color: #fff;
+}
+.formCont .questCont .question__input:checked + .questionOption:after {
+  top: 22px;
+  left: 18px;
+  width: 10px;
+  height: 5px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+.formCont .questCont .form-check-input:checked,
+.formCont .questCont .form-check-input:focus {
+  background-color: #dc3545 !important;
+  outline: none !important;
+  border: none !important;
+}
+.formCont .questCont input:focus {
+  outline: none;
+}
+.formCont .questCont #input-container {
+  display: inline-block;
+  box-shadow: none !important;
+  margin-top: 36px !important;
+}
+.formCont .questCont label.form-check-label.radio-lb {
+  margin-right: 15px;
+}
+.formCont .questCont #btnsCont {
+  text-align: center;
+}
+.formCont .questCont #prevBtn {
+  text-align: right;
+  padding-left: 30px;
+}
+.formCont .questCont #nextBtn {
+  text-align: left;
+  padding-right: 30px;
+}
+.formCont .questCont #prevBtn,
+.formCont .questCont #nextBtn,
+.formCont .questCont #submitBtn {
+  visibility: hidden;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 40px;
+  overflow: hidden;
+  width: 100px;
+  z-index: 1;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #fff;
+  border: 0;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.formCont .questCont #prevBtn:after,
+.formCont .questCont #nextBtn:after,
+.formCont .questCont #submitBtn:after {
+  position: absolute;
+  top: 99%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #004a7b;
+  content: "";
+  z-index: -2;
+  transition: transform 0.3s;
+}
+.formCont .questCont #prevBtn:hover::after,
+.formCont .questCont #nextBtn:hover::after,
+.formCont .questCont #submitBtn:hover::after {
+  transform: translateY(-99%);
+  transition: transform 0.3s;
+}
+.formCont .questCont #leaderBoardCont {
+  display: none;
+}
+.formCont .questCont #leaderBoardCont .cupCont {
+  display: flex;
+  justify-content: center;
+}
+.formCont .questCont #leaderBoardCont .cupCont .goldCup {
+  width: 60px;
+  height: 60px;
+}
+.formCont .questCont #leaderBoardCont h4 {
+  text-align: center;
+  margin: 20px 0px;
+}
+.formCont .questCont #leaderBoardCont .col-sm {
+  flex: 1 0 0% !important;
+  text-align: center;
+}
+.formCont .questCont #leaderBoardCont .rTitle {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+.formCont .questCont #leaderBoardCont #leaderBoard {
+  position: relative;
+  z-index: 10;
+}
+.formCont .questCont #leaderBoardCont #leaderBoard .rankCard {
+  background-color: #fff;
+  position: relative;
+  border-radius: 10px;
+  padding: 15px 5px;
+  margin: 8px 0px;
+}
+.formCont .questCont #leaderBoardCont #leaderBoard .rankGold {
+  box-shadow: rgb(255, 166, 0) 0px 0px 0px 1px;
+}
+.formCont .questCont #leaderBoardCont #leaderBoard .rankSilver {
+  box-shadow: rgb(192, 192, 192) 0px 0px 0px 1px;
+}
+.formCont .questCont #leaderBoardCont #leaderBoard .rankBronze {
+  box-shadow: rgb(205, 127, 50) 0px 0px 0px 1px;
+}
+.formCont .questCont #leaderBoardCont #leaderBoard .rankUser {
+  background-color: #01c7ca;
+}
+.formCont .questCont #leaderBoardCont #leaderBoard .iconDiv {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+}
+.formCont .questCont #leaderBoardCont #leaderBoard .iconDiv .awardIcon {
+  width: 20px;
+  height: 20px;
+}
+.formCont .questCont .back-link {
+  font-weight: 700;
+  color: #dc3545;
+  text-decoration: none;
+  font-size: 18px;
+}
+.formCont .questCont .back-link:hover {
+  color: #82000a;
+}
+.formCont .decorImg {
+  width: 100px;
+  height: auto;
+  position: absolute;
+}
+.formCont .shipImg {
+  display: none;
+  top: 40px;
+  right: -50px;
+  width: 180px;
+}
+.formCont .beanyImg {
+  bottom: 130px;
+  left: 0px;
+}
+.formCont .guyyImg {
+  bottom: 2px;
+  left: 0px;
+}
+
+/* PRELOADER */
+#preloader-wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#preloader {
+  width: 120px;
+  height: 119px;
+  border-top-color: #fff;
+  border-radius: 100%;
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin: -75px 0 0 -75px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index: 1001;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 556px) {
+  .shipImg {
+    display: block !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #line {
+    top: 140px;
+    left: 0px;
+  }
+
+  .formCont .questCont .questionTxt {
+    margin-bottom: 30px;
+  }
+  .formCont .questCont #leaderBoardCont #leaderBoard .iconDiv {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+  }
+  .formCont .questCont #leaderBoardCont #leaderBoard .iconDiv .awardIcon {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #questForm {
+    width: 50% !important;
+    margin: 0 auto;
+    min-width: 300px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
